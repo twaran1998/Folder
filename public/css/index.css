@@ -1,0 +1,518 @@
+
+header{
+    background-color: rgba(47, 79, 79,0.8);
+    color: white;
+}
+
+nav{
+    float: right;
+    margin-top: 20px;
+    margin-right: 100px;
+}
+
+header a:link{
+    color: white;
+    
+}
+header a:visited{
+    color: white;
+}
+
+nav a:hover{
+    background-color: #ffffff8f;
+    color: black ;
+    /* font-size: 1.6em; */
+}
+
+nav ul{
+    list-style-type: none;
+}
+ul li{
+    display: inline-block;
+}
+
+header a{
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 1.3em;
+}
+
+header h1{
+    display: inline-block;
+}
+
+#banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+    /* background-color: darkslategrey; */
+    
+}
+
+#banner h2{
+    font-size: 4em;
+    margin-bottom: 0;
+    margin-top: -30px
+}
+
+#banner p{
+    margin: 0;
+}
+
+#banner a,#banner a:link,#banner a:visited,#banner a:hover{
+    color: black;
+    font-size: 1.4em;
+}
+
+#firstmaindiv{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#firstmaindiv p{
+    margin: 0;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+
+
+h4{
+    text-align: center;
+}
+
+.g2_form{
+    width: 80%;
+    margin: auto;
+}
+
+.g2_form h4{
+    font-size: 2em;
+}
+
+.g2_form div{
+    margin: 15px;
+}
+
+legend{
+    font-weight: bold;
+}
+
+.g2_form label{
+    font-weight: bold;
+    display: inline-block;
+    width: 10em;
+    font-size: 18px;
+}
+
+#g2registrationform input[type="text"],#g2registrationform input[type="number"], #date_of_birth{
+    width: 300px; outline: none; height: 30px; border: none;
+    border-bottom: 2px solid #67a6a6; font-size: 18px;
+    margin: 5px 0;
+}
+
+#gregistrationform {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.4em;;
+}
+
+#gregistrationform input[type=text]{
+    width: 300px; outline: none; height: 30px; border: none;
+    border-bottom: 2px solid #67a6a6; font-size: 18px;
+    margin: 5px 0;
+}
+
+#gregistrationform input[type=submit]{
+    display: block;
+    margin: 15px auto;
+    font-size: 0.7m;
+}
+
+input[type=submit]{
+    background-color: rgb(28, 47, 47);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.g2fieldset{
+    border: 2px solid darkslategrey ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nousers{
+    text-align: center;
+    border: 1px solid red;
+    width: 500px;
+    margin: 30px auto;
+}
+
+.nousers input[type=submit]{ 
+    margin: 10px auto !important; 
+}
+
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:wght@400;700&display=swap');
+
+*{
+    font-family: 'Gentium Plus', serif; user-select: none;
+    /* padding: 0; margin: 0; box-sizing: border-box; */
+}
+.logincontent{
+     height: 600px;
+    display: flex;
+    align-items: center; justify-content: center;
+}
+.logincontainer{
+    width: 550px; min-height: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px 10px rgba(28, 47, 47,0.09);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: space-between;
+}
+.logincontent .nav,.logincontent .btn{
+    height: 50px; outline: none; border: none; cursor: pointer;
+    width: 100%; display: flex; align-items: center;
+    justify-content: center;
+}
+.logincontent .btn{
+    background-color: rgb(28, 47, 47);
+    transition: 0.2s linear; font-size: 20px;
+    font-weight: 700; color: white;
+}
+#signUp{
+    display: none;
+    flex-direction: column;
+    transition: 0.2s linear;
+    position: absolute;
+}
+#signupForm{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.logincontent .btn1{
+    background-color: white;
+    color: black;
+}
+#login{
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s linear;
+    position: absolute;
+}
+.logincontent .main{
+    min-height: 400px; width: 100%;
+    display: flex; align-items: center; justify-content: space-evenly;
+}
+.logincontent .loginClass,.logincontent .signupClass{
+    width: 400px;
+    display: flex; align-items: center; justify-content: center;
+}
+.logincontent input[type="text"], .logincontent input[type="password"], .logincontent input[type="email"], select{
+    width: 300px; outline: none; height: 30px; border: none;
+    border-bottom: 2px solid #67a6a6; font-size: 18px;
+    margin: 20px 0;
+}
+.logincontent input[type="text"]::placeholder,.logincontent input[type="password"]::placeholder,.logincontent input[type="email"]::placeholder{
+    color: rgb(28, 47, 47);
+}
+.logincontent button{
+    background-color: rgb(28, 47, 47); width: 300px; border: none;
+    outline: none; cursor: pointer; height: 40px; color: white;
+    font-weight: 700; font-size: 15px;  margin: 5px 0;
+}
+.logincontent .signBtn{
+    margin: 20px 0;
+}
+.logincontent .enquire{
+    display: flex; width: 300px;
+    justify-content: space-between; align-items: center;
+    margin: 10px 0;
+}
+.logincontent a{
+    color: black;
+    text-decoration: none;
+}
+
+#appointmentForm{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#appointmentForm h3{
+    font-size: 2em;
+    
+}
+
+#appointmentForm label{
+    font-weight: bold;
+    display: inline-block;
+    width: 10em;
+    font-size: 18px;
+    text-align: left;
+    
+}
+
+#appointmentForm input[type="text"],input[type="date"]{
+    width: 300px; outline: none; height: 30px; border: none;
+    border-bottom: 2px solid #67a6a6; font-size: 18px;
+    margin: 30px 0;
+}
+
+#appointmentForm input[type="submit"]{
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+
+#login-body{
+    background-image: url('/images/road.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#dashboard-banner-img{
+    background-image: url('/images/driving.jpeg') ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 550px !important;
+    color: white;
+    
+}
+
+/* #dashboard-body{
+    background-image: url('/images/driving.jpeg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+#g2-test-img{
+    background-image: url('/images/G2testimg.webp');
+    /* backdrop-filter: blur(50px); */
+    
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 550px !important;
+    color: black !important;
+}
+
+#g-test-img{
+    background-image: url('/images/gtestimg.webp');
+    /* backdrop-filter: blur(50px); */
+    
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 550px !important;
+    color: white !important;
+}
+
+.appointment{
+    color: black;
+    height: 380px !important;
+}
+
+#appointment-banner-img{
+    background-image: url('/images/app2img.jpeg');
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#examinerBody h3{
+    text-align: center;
+    font-size: 2em;
+    margin-top: 40px;
+}
+
+#examinerTestsContainer{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+.driverInfoForm{
+    width: 90%;
+    /* margin: auto; */
+    /* text-align: center; */
+    margin-top: 40px;
+    display: none;
+}
+
+.driverInfoForm h3{
+    font-size: 2em;
+    
+}
+
+.driverInfoForm label{
+    font-weight: bold;
+    display: inline-block;
+    width: 10em;
+    font-size: 18px;
+    text-align: left;
+    
+}
+
+.driverInfoForm input[type="text"],input[type="date"]{
+    width: 300px; outline: none; height: 30px; border: none;
+    border-bottom: 2px solid #67a6a6; font-size: 18px;
+    margin: 10px 0;
+    background-color: white;
+}
+
+.driverInfoForm textarea{ 
+    font-size: 18px;
+    margin: 10px 0;
+    background-color: white;
+    
+}
+
+.driverInfoForm input[type="submit"]{
+    font-size: 0.8em;
+    margin: 20px 0;
+}
+
+.testdriverinfo{
+    /* min-height: 100px; */
+    /* border: 1px solid black; */
+    box-shadow: 5px 10px 8px #888888;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+    
+    border: 1px solid black;
+}
+
+.testdriverinfo:hover{
+    transform: Scale(1.05,1.05);
+    cursor:pointer;
+}
+
+.testdriverinfo > div{
+    font-size: 1.3em;
+    margin: 5px;
+    pointer-events: none;
+}
+
+
+.testdriverinfo .bold{
+    font-weight: bold;
+}
+
+.testdriverinfo #close{
+    text-align: right;
+    display: none;
+    font-family: Arial;
+}
+
+#resultUpdateForm .hiddenInput{
+    display: none;
+}
+
+
+#results-banner-img{
+    background-image: url('/images/resulst5.jpeg') ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 450px !important;
+    color: white;
+}
+
+
+#resultForm{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#resultForm h3{
+    font-size: 2em;
+    
+}
+
+#resultForm label{
+    font-weight: bold;
+    display: inline-block;
+    width: 10em;
+    font-size: 18px;
+    text-align: left;
+    
+}
+
+#resultForm input[type="text"],input[type="date"]{
+    width: 300px; outline: none; height: 30px; border: none;
+    border-bottom: 2px solid #67a6a6; font-size: 18px;
+    margin: 30px 0;
+}
+
+#resultForm input[type="submit"]{
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+
+
+
+
+

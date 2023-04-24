@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>G test </title>
+        <link rel="stylesheet" href="/css/index.css">
+        
+    </head>
+    <body>
+        <!-- <h1>Dashboard</h1> -->
+        <div id="g-test-img">
+
+        
+            <%- include("layouts/header") -%>
+
+            <div id="banner">
+                <h2>G Test</h2>
+            </div>
+        </div>
+        <!-- <div id="gregistrationform">
+            <form method="post" action="/g">
+                <lable>Please enter your License number :</lable> 
+                <input type="text" id="licno" name="licno">
+                
+                <input type="submit">
+            </form>
+        </div> -->
+        
+        <div>
+
+
+            <div id="g2registrationform">
+                <% if (locals.g2d && locals.g2d.g_test_result == false) {   %>
+                    <div class="nousers">
+                        <h3>Sorry!You have failed the G test</h3>
+                        <h3> Examiner's comments: <%= g2d.g_test_comments.trim() %> </h3>
+                        <h4>Your registration details are saved. In order to re-attempt the G test, please book a time slot below. </h4>
+                    </div>
+                <% } %>
+                <% if(locals.g2d && locals.g2d.g2_test_result == true && !locals.g2d.g_test_result) { %>
+                <form id="gSlotBookingForm" name="gSlotBookingForm" class="g2_form" action="/g/bookSlot" method="post">
+                    <h4> G Test Appointment</h4>
+                    <fieldset class="g2fieldset">
+                        <legend>Personal Information</legend>
+                        <div>
+                            <label for="date_of_appointment">Date of Appointment:</label>
+                            <% if(g2d.appTime){    %>
+                            <input type="date" name="date_of_appointment" id="date_of_appointment" required disabled value=<%= g2d.appDate %> >
+                            <% } else { %>
+                                <input type="date" name="date_of_appointment" id="date_of_appointment" required  >
+                            <% }        %>
+                            <span>*</span>
+                        </div>
+                        <div>
+                            <label for="timeslot">Time:</label>
+                            <select name="timeslot" id="timeslot" required>
+                                <% if(g2d.appTime){    %>
+                                    <option value="" selected disabled hidden> <%= g2d.appTime %> </option>
+                                <% } else { %>
+                                    <option value="" selected disabled hidden>Choose date first</option>
+                                <% }        %>
+                                
+                            </select>
+                            <span>*</span>
+                        </div>
+                        
+                    </fieldset>
+                    <% if(!g2d.appDate) {%> 
+                    <div>
+                        <input type="submit" id="submit" value="Book Slot">
+                    </div>
+                    <% } %>
+                </form>
+                <form name="g2_form" class="g2_form" id="g2_form" action="/g/update" method="post">
+                    <h4> User Details </h4>
+                    <fieldset class="g2fieldset">
+                        <legend>Personal Information</legend>
+                        <div>
+                            <label for="first_name">First Name:</label>
+                            <input type="text" name="first_name" id="first_name" autofocus disabled required value=<%= g2d.first_name %> >
+                            
+                        </div>
+                        <div>
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" name="last_name" id="last_name" disabled required value=<%= g2d.last_name %> >
+                            
+                        </div>
+    
+                        <div>
+                            <label for="date_of_birth">Date of Birth:</label>
+                            <input type="date" name="date_of_birth" id="date_of_birth" disabled required value=<%= g2d.date_of_birth %> >
+                            
+                        </div>
+                        <div>
+                            <label for="age">Age:</label>
+                            <input type="number" name="age" id="age" disabled required value=<%= g2d.age %> >
+                            
+                        </div> 
+                        <div>
+                            <label for="license_no">License number:</label>
+                            <input type="text" name="license_no" id="license_no" disabled required value=<%= g2d.license_no %> >
+                            
+                        </div>      	
+                    </fieldset>
+                    <fieldset class="g2fieldset">
+                        <legend>Car Details</legend>
+                        <div>
+                            <label for="make">Make:</label>
+                            <input type="text" name="make" id="make" required value=<%= (typeof g2d.car_details =="undefined")?"":g2d.car_details.make %> >
+                            <span>*</span>
+
+                        </div>
+                        <div>
+                            <label for="model">Model:</label>
+                            <input type="text" name="model" id="model" required value=<%= (typeof g2d.car_details =="undefined")?"":g2d.car_details.model %> >
+                            <span>*</span>
+                        </div>
+                        
+                        <div>
+                            <label for="year">Year:</label>
+                            <input type="number" name="year" id="year" required value=<%= (typeof g2d.car_details =="undefined")?"":g2d.car_details.year %> >
+                            <span>*</span>
+                        </div>
+                        
+                        <div>
+                            <label for="plate_no">Plate number:</label>
+                            <input type="text" name="plate_no" id="plate_no" required value=<%= (typeof g2d.car_details =="undefined")?"":g2d.car_details.plate_no %> >
+                            <span>*</span>
+                        </div>
+                        
+                        
+                    </fieldset>
+                    <div>
+                        <input type="submit" id="submit" value="Save Changes">
+                    </div>
+                </form>
+
+                
+
+                <% } 
+                else if(locals.g2d && !locals.g2d.g2_test_result) { %>
+                    <div class="nousers">
+                        <h3>You cannot register for G Test yet</h3>
+                        <h4>Please pass the G2 test first</h4>
+                
+                        
+                    </div>
+                <% }
+                else if(locals.g2d && locals.g2d.g_test_result == true) { %>
+                    <div class="nousers">
+                        <h3>Congratulations!! You have passed the G test</h3>
+                        <h3> Examiner's comments: <%= g2d.g_test_comments.trim() %> </h3>
+                        <h4>Your license will be delivered in 3 weeks</h4>
+                        
+                        
+                    </div>
+                <% }
+                else { %>
+                    <div class="nousers">
+                        <h3>Could not your find your details.</h3>
+                        <h4>Please register G2 test first</h4>
+                        <form action="/g2" method="get">
+                            <input type="submit" value="Register for G2">
+                        </form>
+                        
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <script>   
+            <% if(locals.appointments)  { %>
+            let appointments =   <%- JSON.stringify(appointments) %> ; 
+            <% } %>
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="/js/g.js"></script>
+    </body>
+</html>

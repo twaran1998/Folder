@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Examiner</title>
+        <link rel="stylesheet" href="/css/index.css">
+        
+    </head>
+    <body id="examinerBody">
+        <div id="appointment-banner-img">
+            <%- include("layouts/header") -%>
+            
+            <div id="banner" class="appointment">
+                <h2>Examiner</h2>
+            </div>
+        </div>
+
+        <form name="appointmentForm" id="appointmentForm" method="get" action="/examiner">
+            <div>
+                <label>Test Type : </label>
+                <select name="testType" id="testType">
+                    <option value="all">All Tests</option>
+                    <option value="g2test">G2 Tests</option>
+                    <option value="gtest">G Tests</option>
+                </select>
+            </div>
+            <input type="submit" value="Display Tests"> 
+
+        </form>
+
+        <h3>
+            Tests
+        </h3>
+
+        <div id="examinerTestsContainer">
+            <% for (var i=0; i < appointments.length ; i++) { %>
+            <div class="testdriverinfo">
+                    <div id="close">
+                        X
+                    </div>
+                    <div>
+                        <span class="tag">Name : </span><span class="bold"> <%= appointments[i].first_name %> <%= appointments[i].last_name %> </span>
+                    </div>
+                    <div>
+                        <span class="tag">License Number : </span> <span class="bold"> <%= appointments[i].license_no %> </span>
+                    </div>
+                    <div>
+                        <span class="tag">Car Plate Number : </span> <span class="bold"> <%= appointments[i].plate_no %> </span>
+                    </div>
+                    <form class="driverInfoForm" name="resultUpdateForm" id="resultUpdateForm" method="post" action="/examiner/updateResults">
+                        <div class="hiddenInput">
+                            <input id="license_number" name="license_number"  value=<%= appointments[i].license_no %> >
+                        </div>
+                        <div class="hiddenInput">
+                            <input id="test_type" name="test_type"  value=<%= appointments[i].testType %> >
+                        </div>
+                        <div>
+                            <label>Test Result: </label>
+                            <select id="testResult" name="testResult">
+                                <option value="pass">Pass</option>
+                                <option value="fail">Fail</option>
+                            </select>
+                        </div>
+                        <div> 
+                            <label>Comments: </label>
+                            <textarea name="comments" id="comments" rows="4" cols="50" required>
+
+                            </textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Update Result">
+                        </div>
+                    </form>
+                
+            </div>
+            <% } %>
+        </div>        
+        
+        
+        
+        <script>    
+            let apps =   <%- JSON.stringify(appointments) %> ; 
+            
+        </script>
+        <div id="snackbar">Some text some message..</div>
+        
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="/js/common.js"></script>
+        <script src="/js/examiner.js"></script>
+    </body>
+</html>

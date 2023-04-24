@@ -1,0 +1,26 @@
+<header>
+    <h1><a href="/">Book DriveTest</a></h1>
+    <nav>
+        <ul>
+            <li><a href="/" >Dashboard</a></li>
+           
+            <%  if(loggedIn && accountType=="driver" ){ %>
+                <li><a href="/G2" >G2 Test</a></li>
+                <li><a href="/G">G Test</a></li>
+            <%  }   
+                if(loggedIn && accountType=="admin" ) { %>
+                    <li><a href="/Appointment" >Appointment</a></li>
+                    <li><a href="/Results">Results</a></li>
+            <%  }   
+                if(loggedIn && accountType=="examiner" ) { %> 
+                    <li><a href="/Examiner" >Examiner</a></li>
+            <%  }          
+             if(!loggedIn) {    %>
+                    <li><a href="/Login">Login</a></li>
+            <%  }    if(loggedIn){    %>
+                    <li><a href="/signOut">SignOut</a></li>
+            <%    }     %>
+            
+        </ul>
+    </nav>
+</header>

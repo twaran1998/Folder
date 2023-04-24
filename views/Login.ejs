@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/css/index.css">
+        
+    </head>
+    <body id="login-body">
+        <!-- <h1>Dashboard</h1> -->
+        <%- include("layouts/header") -%>
+
+        <!-- <h2>SignUp</h2>
+        <form name="signup" id="signup" action="/signup" method="post">
+
+            <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" autofocus required>
+            <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" autofocus required>  
+            <label for="cpassword">Password:</label>
+                <input type="password" name="cpassword" id="cpassword" autofocus required>   
+            <label for="usertype">User Type:</label>
+            <select name="usertype" id="usertype">
+                
+                    <option value="driver">Driver</option>
+                    <option value="examiner">Examiner</option>
+                    <option value="admin">Admin</option>
+                 
+            </select>
+            <input type="submit" id="submit" value="Register">
+        </form> -->
+
+        <div class="logincontent">
+            <div class="logincontainer">
+                <div class="nav">
+                    <button class="btn btn1" id="btns1" onclick="showLogin()">Login</button>
+                    <button class="btn btn2" id="btns2" onclick="showSignup()">Sign Up</button>
+                </div>
+                <div class="main">
+                    <div id="login" class="loginClass">
+                        <form name="login" id="loginForm" action="/login" method="post">
+                            <input type="text" id="username" name="username" placeholder="Username" required><br>
+                            <input type="password" id="password" name="password"placeholder="Password"><br>
+                            <div class="enquire">
+                                <a href="#"><input type="checkbox" id="remember">Remember me</a>
+                                <a href="#">Forgot password?</a>
+                            </div><br>
+                            <button class="subBtn" type="submit">LOGIN</button><br>
+                            <a href="#" onclick="showSignup()">No Account? Create one</a>
+                        </form>
+                    </div>
+                    <div id="signUp" class="signupClass">
+                        <form name="signup" id="signupForm" action="/signup" method="post">
+                            <input type="text" id="username" name="username" placeholder="Username" autofocus required><br>
+                            <input type="password" id="password1" name="password1" placeholder="Password" required><br>
+                            <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" required><br>
+                            <select name="usertype" id="usertype">
+                
+                                <option value="driver">Driver</option>
+                                <option value="examiner">Examiner</option>
+                                <option value="admin">Admin</option>
+                             
+                        </select><br>
+                            <button type="submit" class="signBtn">CREATE ACCOUNT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="snackbar" style="background-color:white;color:black">Some text some message..</div>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="/js/common.js"></script>
+        <script src="/js/login.js"></script>
+    </body>
+</html>

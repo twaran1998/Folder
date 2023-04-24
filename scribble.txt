@@ -1,0 +1,86 @@
+<!-- <div>
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name" id="last_name" value=<%= locals.formData.lastName %> required>
+                        <span>*</span>
+                    </div>
+
+                    <div>
+                        <label for="date_of_birth">Date of Birth:</label>
+                        <input type="date" name="date_of_birth" id="date_of_birth" value=<%= locals.formData.dob %> required>
+                        <span>*</span>
+                    </div>
+                    <div>
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" id="age" value=<%= locals.formData.age %> required>
+                        <span>*</span>
+                    </div> 
+                    <div>
+                        <label for="license_no">License number:</label>
+                        <input type="text" name="license_no" id="license_no" value=<%= locals.formData.licNumber %> required>
+                        <span>*</span>
+                    </div>      	
+                </fieldset>
+                <fieldset class="g2fieldset">
+                    <legend>Car Details</legend>
+                    <div>
+                        <label for="make">Make:</label>
+                        <input type="text" name="make" id="make" value=<%= locals.formData.make %> required>
+                        <span>*</span>
+                    </div>
+                    <div>
+                        <label for="model">Model:</label>
+                        <input type="text" name="model" id="model"  value=<%= locals.formData.model %> required>
+                        <span>*</span>
+                    </div>
+                    
+                    <div>
+                        <label for="year">Year:</label>
+                        <input type="number" name="year" id="year" value=<%= locals.formData.year %> required>
+                        <span>*</span>
+                    </div>
+                    
+                    <div>
+                        <label for="plate_no">Plate number:</label>
+                        <input type="text" name="plate_no" id="plate_no" value=<%= locals.formData.plateNumber %> required>
+                        <span>*</span>
+                    </div> -->
+
+
+------------------------------------------------------------=============================
+const onGetRequest = async (req,res)=>{
+    const g2d = {};
+    if(loggedIn){
+
+        
+
+        g2d = await user.findById(req.session.user.userId);
+        res.render("g", {g2d});
+    }
+}
+
+-------------------------------------------------------------
+<div>
+                            <label for="model">Model:</label>
+                            <input type="text" name="model" id="model" required value=<%= g2d.car_details.model %> >
+                            <span>*</span>
+                        </div>
+                        
+                        <div>
+                            <label for="year">Year:</label>
+                            <input type="number" name="year" id="year" required value=<%= g2d.car_details.year %> >
+                            <span>*</span>
+                        </div>
+                        
+                        <div>
+                            <label for="plate_no">Plate number:</label>
+                            <input type="text" name="plate_no" id="plate_no" required value=<%= g2d.car_details.plate_no %> >
+                            <span>*</span>
+                        </div>
+
+
+
+
+=================================================
+shrey = registed for g2 and passed
+Paul= did not register for g2 
+bob = registered for g2 but not pass

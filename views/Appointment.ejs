@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Appointments</title>
+        <link rel="stylesheet" href="/css/index.css">
+        
+    </head>
+    <body>
+        <div id="appointment-banner-img">
+            <%- include("layouts/header") -%>
+            
+            <div id="banner" class="appointment">
+                <h2>Appointment</h2>
+            </div>
+        </div>
+
+        
+        
+        <form action="/appointment/store" method="post" id="appointmentForm">
+            <h3>
+                Book Slots
+            </h3>
+            <div>
+                <label>Test Type :</label> 
+                <select name="testtype" id="testtype">
+                    <!-- <option value="" selected disabled hidden>Choose here</option> -->
+                    
+                    <option value="G2">G2</option>
+                    <option value="G">G</option>
+                </select><br>
+            </div>
+            <div>
+                <label>Date : </label>  
+                <input type="date" name="appointment_date" id="appointment_date"  required >
+            </div>
+            <div>
+                <label> Select time slot :</label> 
+                <select name="timeslot" id="timeslot">
+                    <!-- <option value="" selected disabled hidden>Choose here</option> -->
+                    <option value="9:00">9 AM</option>
+                    <option value="9:30">9:30 AM</option>
+                    <option value="10:00">10 AM</option>
+                    <option value="10:30">10:30 AM</option>
+                    <option value="11:00">11 AM</option>
+                    <option value="11:30">11:30 AM</option>
+                    <option value="12:00">12 PM</option>
+                    <option value="12:30">12:30 PM</option>
+                </select><br>
+            </div>
+            <input type="submit" value="Save"> 
+        </form>
+        
+        <script>    let appointments =   <%- JSON.stringify(appointments) %> ; </script>
+        <div id="snackbar">Some text some message..</div>
+        
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="/js/common.js"></script>
+        <script src="/js/appointment.js"></script>
+    </body>
+</html>
